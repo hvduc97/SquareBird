@@ -4,19 +4,17 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Enemy
-  - Square
-  - Rock
-  - Map
-  - PlayerClone
-  - Item
-  - MapFront
-  - Point
+  - MapDown
   - Loss
-  - Sky
+  - MapUp
   - Score
-  - BackGround
+  - Item
+  - Bomb
+  - PlayerClone
+  - Boss
   - Bullet
+  - Revival
+  - Level1
   layers:
   - Default
   - TransparentFX

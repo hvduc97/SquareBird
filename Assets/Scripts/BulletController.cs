@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class BulletController : MonoBehaviour
 {
-    private GameObject player;
     private float speed = 10.0f;
     private float range = 3.0f;
 
@@ -19,7 +18,7 @@ public class BulletController : MonoBehaviour
         transform.Translate(new Vector3(1.0f * Time.deltaTime * speed, 0, 0));
         if (transform.position.x > range)
         {
-            Destroy(this.transform.gameObject);
+            Destroy(this.gameObject);
         }
     }
 
@@ -28,17 +27,34 @@ public class BulletController : MonoBehaviour
         if (collision.gameObject.tag == "Loss")
         {
             Destroy(collision.gameObject);
-            //Debug.Log("Destroy Loss");
+            
         }
 
-        if (collision.gameObject.tag == "Map")
+        if (collision.gameObject.tag == "MapDown")
         {
             Destroy(collision.gameObject);
-            Destroy(this.transform.gameObject);
-            //Debug.Log("Destroy Map");
+            Destroy(this.gameObject);
+            
+        }
+
+        if (collision.gameObject.tag == "MapUp")
+        {
+            Destroy(collision.gameObject);
+            Destroy(this.gameObject);
+        }
+
+        if (collision.gameObject.tag == "Bomb")
+        {
+            Destroy(collision.gameObject);
+            Destroy(this.gameObject);
+        }
+
+        if (collision.gameObject.tag == "Boss")
+        {
+            Destroy(this.gameObject);
         }
     }
 
 
-    
+
 }

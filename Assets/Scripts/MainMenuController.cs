@@ -1,18 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class MainMenuController : MonoBehaviour
 {
-    [SerializeField]
-    private Button btnPlay;
+    [SerializeField] private Button btnPlay;
+    [SerializeField] private Button btnExit;
 
     // Start is called before the first frame update
     void Start()
     {
-        btnPlay.onClick.AddListener(OnClickButton);
+        btnPlay.onClick.AddListener(BtnPlayOnClick);
+        btnExit.onClick.AddListener(BtnExitOnClick);
     }
 
     // Update is called once per frame
@@ -21,8 +22,13 @@ public class MainMenuController : MonoBehaviour
         
     }
 
-    private void OnClickButton()
+    private void BtnPlayOnClick()
     {
-        SceneManager.LoadScene("PlayScene");
+        SceneManager.LoadScene(1);
+    }
+
+    private void BtnExitOnClick()
+    {
+        Application.Quit();
     }
 }
